@@ -5,5 +5,8 @@ api-version: 1.18
 commands:
   gui:
     description: opens the utility gui
-
+    permissions:
+      utilgui.use:
+        description: Allows you to use the gui
+        default: op
 
