@@ -1,4 +1,5 @@
 package ferrevdd.utilgui;
+import ferrevdd.utilgui.commands.StrikeLightning;
 import ferrevdd.utilgui.events.ClickEvent;
 import ferrevdd.utilgui.commands.guicom;
 import org.bukkit.event.Listener;
@@ -9,6 +10,7 @@ public final class Utilgui extends JavaPlugin implements Listener {
     public void onEnable() {
 
         getCommand("gui").setExecutor(new guicom());
+        getCommand("strike").setExecutor(new StrikeLightning());
         getServer().getPluginManager().registerEvents(new ClickEvent(), this);
     }
     @Override

@@ -23,7 +23,7 @@ public class guicom implements CommandExecutor {
                 ItemStack heal = new ItemStack(Material.GOLDEN_APPLE);
                 ItemStack creative = new ItemStack(Material.BEDROCK);
                 ItemStack survival = new ItemStack(Material.APPLE);
-
+                ItemStack lightning = new ItemStack(Material.END_ROD);
 
                 ItemMeta kill_itemdata = kill.getItemMeta();
                 kill_itemdata.setDisplayName(ChatColor.DARK_RED + "Reset your character");
@@ -41,8 +41,14 @@ public class guicom implements CommandExecutor {
                 survival_itemdata.setDisplayName(ChatColor.GREEN + "switch to gamemode survival");
                 survival.setItemMeta(survival_itemdata);
 
-                ItemStack[] menuitems = {kill, heal, creative, survival};
+                ItemMeta lightning_itemdata = lightning.getItemMeta();
+                lightning_itemdata.setDisplayName(ChatColor.GRAY+"sommon a lightning at your location");
+                lightning.setItemMeta(lightning_itemdata);
+
+                ItemStack[] menuitems = {kill, heal, creative, survival,lightning};
                 gui.setContents(menuitems);
+
+
                 player.openInventory(gui);
             }
             return true;
